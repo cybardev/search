@@ -1,8 +1,3 @@
-# search
-
-`index.html`
-
-```html
 <!DOCTYPE html>
 <html lang="en" style="scroll-behavior: smoooth;">
 <head>
@@ -40,4 +35,3 @@
   </header>
 </body>
 </html>
-```
