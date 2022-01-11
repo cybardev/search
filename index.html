@@ -10,6 +10,13 @@
   <title>Cy | search</title>
 
   <style>
+    #box {
+      background: white;
+      position:absolute;
+      height: 100vh;
+      width: 100vh;
+    }
+
     body {
       --color: #118bee;
       --color-accent: #118bee15;
@@ -29,11 +36,8 @@
 </head>
 
 <body>
-  <header>
-    <img src="https://github.com/cybardev/images/blob/main/cy-icon.png?raw=true" width=96px />
-  </header>
   <main>
-    <div class="gcse-searchbox-only" style="margin: auto;"></div>
+    <div class="gcse-searchbox-only" id="box"></div>
   </main>
 </body>
 </html>
