@@ -31,7 +31,9 @@
 <script async src="https://cse.google.com/cse.js?cx=fddff44cdc828da48"></script>
 </head>
 <body>
-  <header><img src="https://github.com/cybardev/images/blob/main/cy-icon.png?raw=true" width=96px /></header>
+  <header>
+    <img src="https://github.com/cybardev/images/blob/main/cy-icon.png?raw=true" width=96px />
+  </header>
   <main><div class="gcse-searchbox-only" style="margin: auto;"></div></main>
 </body>
 </html>
