@@ -17,22 +17,8 @@
     div {
       margin: auto;
     }
-
-    body.darkMode {
-      --color: #0097fc;
-      --color-accent: #0097fc4f;
-      --color-bg: #333;
-      --color-bg-secondary: #555;
-      --color-link: #0097fc;
-      --color-secondary: #e20de9;
-      --color-secondary-accent: #e20de94f;
-      --color-shadow: #bbbbbb20;
-      --color-table: #0097fc;
-      --color-text: #f7f7f7;
-      --color-text-secondary: #aaa;
-    }
-
-    body.lightMode {
+  
+    body {
       --color: #118bee;
       --color-accent: #118bee15;
       --color-bg: #fff;
@@ -47,23 +33,9 @@
     }
   </style>
   <script async src="https://cse.google.com/cse.js?cx=fddff44cdc828da48"></script>
-  <script>
-    function toggleDarkMode() {
-      let bodyTag = document.getElementsByTagName('body')[0];
-      let toggleTag = document.getElementById('colorToggle');
-
-      if (bodyTag.classList.contains('lightMode')) {
-        bodyTag.classList.replace('lightMode', 'darkMode');
-        toggleTag.innerHTML = '☀️';
-      } else {
-        bodyTag.classList.replace('darkMode', 'lightMode');
-        toggleTag.innerHTML = '🌙';
-      }
-    }
-  </script>
 </head>
 
-<body class="lightMode">
+<body>
   <header>
     <img src="https://github.com/cybardev/images/blob/main/cy-icon.png?raw=true" width=96px />
   </header>
