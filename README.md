@@ -1,4 +1,3 @@
-<!--
 # search
 
 `index.html`
@@ -39,6 +38,3 @@
 </body>
 </html>
 ```
--->
-<script async src="https://cse.google.com/cse.js?cx=fddff44cdc828da48"></script>
-<div class="gcse-search"></div>
