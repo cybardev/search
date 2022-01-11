@@ -36,8 +36,10 @@
 <body>
   <header>
     <img src="https://github.com/cybardev/images/blob/main/cy-icon.png?raw=true" width=96px />
-    <div class="gcse-searchbox-only" style="margin: auto;"></div>
   </header>
+  <main>
+    <div class="gcse-searchbox-only" style="margin: auto;"></div>
+  </main>
 </body>
 </html>
 ```
