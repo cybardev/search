@@ -14,19 +14,18 @@ footer p {
     color: grey;
 }
 
-footer p a:link {
-    color: black;
+footer p a {
+    color: rgb(56, 56, 56);
 }
 
 footer p a:hover,
 footer p a:active,
 footer p a:visited {
-    color: darkgrey;
+    color: black;
 }
 
 .search-box {
     width: 50%;
-    margin: auto;
 }
 
 .search-field {
