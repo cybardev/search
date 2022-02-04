@@ -1,0 +1,42 @@
+:root {
+    --font: sans-serif;
+}
+
+header {
+    flex-direction: column;
+}
+
+h1 span {
+    color: crimson;
+}
+
+footer p {
+    color: grey;
+}
+
+footer p a:link {
+    color: black;
+}
+
+footer p a:hover,
+footer p a:active,
+footer p a:visited {
+    color: darkgrey;
+}
+
+.logo {
+    width: 96px;
+}
+
+.search-box {
+    width: 50%;
+    margin: auto;
+}
+
+.search-field {
+    height: 50px;
+}
+
+.search-button {
+    width: 50px;
+}
