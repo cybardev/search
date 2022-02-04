@@ -1,7 +1,3 @@
-:root {
-    --font: sans-serif;
-}
-
 header {
     flex-direction: column;
 }
