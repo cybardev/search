@@ -25,7 +25,7 @@ footer p a:visited {
 }
 
 .search-box {
-    width: 50%;
+    width: 100%;
 }
 
 .search-field {
@@ -34,4 +34,16 @@ footer p a:visited {
 
 .search-button {
     width: 50px;
+}
+
+@media screen and (min-width: 768px) {
+    .search-box {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .search-box {
+        width: 60%;
+    }
 }
