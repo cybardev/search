@@ -1,8 +1,8 @@
 {
     "$schema": "https://json.schemastore.org/web-manifest-combined.json",
     "id": "/",
-    "name": "Cy|Search",
-    "short_name": "Cy|Search",
+    "name": "Cy | Search",
+    "short_name": "Cy | Search",
     "start_url": "/",
     "scope": ".",
     "orientation": "portrait",
