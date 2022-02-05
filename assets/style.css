@@ -1,14 +1,43 @@
+body {
+    font-family: sans-serif;
+}
+
+body,
+header {
+    display: flex;
+    flex-direction: column;
+}
+
 header {
     margin-top: 30%;
-    flex-direction: column;
+    align-items: center;
+}
+
+header a {
+    margin: 0;
+    padding: 0;
+    font-size: 0px;
+}
+
+header a img {
+    width: 96px;
+    height: 96px;
 }
 
 h1 span {
     color: crimson;
 }
 
+main {
+    margin: 1.5rem;
+}
+
+footer {
+    align-self: center;
+}
+
 footer p {
-    color: grey;
+    color: #646464;
 }
 
 footer p a {
@@ -21,16 +50,22 @@ footer p a:visited {
     color: black;
 }
 
+.logo {
+    margin: 1rem;
+}
+
 .search-box {
     width: 100%;
+    margin: auto;
 }
 
 .search-field {
-    height: 50px;
+    height: 36px;
 }
 
 .search-button {
     width: 50px;
+    justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
