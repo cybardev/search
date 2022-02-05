@@ -45,7 +45,6 @@ self.addEventListener("install", (event) => {
                 "/index.html",
                 "/README.md",
                 "/LICENSE",
-                "/CNAME",
             ]);
         })
     );
