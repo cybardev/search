@@ -72,7 +72,7 @@ self.addEventListener("activate", (event) => {
 // Gets data on screen as quickly as possible, then updates once the network has returned the latest data.
 self.addEventListener("fetch", (event) => {
     event.respondWith(
-        caches.open(cacheName).then(async (cache) => {
+        caches.open(cacheName).then((cache) => {
             const response = await cache.match(event.request);
             return (
                 response ||
