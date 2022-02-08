@@ -36,7 +36,7 @@
             </a>
             <h1>Cy <span>|</span> search</h1>
         </header>
-        <main>
+        <main x-data="staticData">
             <form class="input-group search-box" autocomplete="off">
                 <input
                     type="text"
@@ -64,6 +64,18 @@
                     </svg>
                 </button>
             </form>
+            <section>
+                <template x-for="entry in results">
+                    <a :href="entry.url" target="_blank" class="search-result">
+                        <h2 x-text="entry.title" class="result-title"></h2>
+                        <p x-text="entry.url" class="result-url"></p>
+                    </a>
+                    <p
+                        x-text="entry.description"
+                        class="result-description"
+                    ></p>
+                </template>
+            </section>
         </main>
         <footer>
             <p>
