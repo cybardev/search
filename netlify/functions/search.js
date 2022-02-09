@@ -19,9 +19,11 @@ exports.handler = async (event, context) => {
                 "x-rapidapi-host": API_HOST,
                 "x-rapidapi-key": API_KEY,
             },
-        }).then((response) => {
-            search_results = response.json().value;
-        });
+        })
+            .then((response) => {
+                search_results = response.json().value;
+            })
+            .catch((err) => console.log(err.toString()));
 
         console.log(search_results);
 
