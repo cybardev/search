@@ -1,7 +1,7 @@
 // @ts-nocheck
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
-exports.handler = async (event, context) => {
+export async function handler(event, context) {
     try {
         const API_KEY = process.env.SEARCH_API,
             API_HOST = "contextualwebsearch-websearch-v1.p.rapidapi.com",
@@ -36,4 +36,4 @@ exports.handler = async (event, context) => {
     } catch (err) {
         return { statusCode: 500, body: err.toString() };
     }
-};
+}
