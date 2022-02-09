@@ -16,6 +16,6 @@ document.querySelector(".search-box")?.addEventListener("submit", (e) => {
             staticData.results = value;
         })
         .catch((err) => {
-            console.error(err);
+            console.log(err.toString());
         });
 });

@@ -18,6 +18,7 @@ exports.handler = async (event, context) => {
                 "x-rapidapi-key": API_KEY,
             },
         }).then((response) => {
+            console.log(response.json());
             return {
                 statusCode: 200,
                 body: JSON.stringify(response.json()),
