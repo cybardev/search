@@ -6,14 +6,14 @@ const staticData = {
 
 document.querySelector(".search-box")?.addEventListener("submit", (e) => {
     e.preventDefault();
-    staticData.results = fetch(
+    fetch(
         `/.netlify/functions/search?query=${encodeURIComponent(
             e.currentTarget.searchInput.value
         )}`
     )
         .then((data) => data.json())
-        .then(({ res }) => {
-            return res;
+        .then(({ value }) => {
+            staticData.results = value;
         })
         .catch((err) => {
             console.error(err);

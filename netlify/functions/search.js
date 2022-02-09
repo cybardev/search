@@ -11,8 +11,6 @@ exports.handler = async (event, context) => {
                 "&pageNumber=1&pageSize=50&autoCorrect=false&safeSearch=false",
             QUERY_STRING = event.queryStringParameters.query;
 
-        let search_results;
-
         fetch(API_ENDPOINT + QUERY_STRING + SEARCH_PARAMS, {
             method: "GET",
             headers: {
@@ -20,15 +18,11 @@ exports.handler = async (event, context) => {
                 "x-rapidapi-key": API_KEY,
             },
         }).then((response) => {
-            search_results = response.json().value;
+            return {
+                statusCode: 200,
+                body: JSON.stringify(response.json()),
+            };
         });
-
-        return {
-            statusCode: 200,
-            body: JSON.stringify({
-                res: search_results,
-            }),
-        };
     } catch (err) {
         return { statusCode: 500, body: err.toString() };
     }
