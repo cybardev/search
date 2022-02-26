@@ -18,8 +18,8 @@ document
                 console.log(response.toString());
             }
             const data = await response.json();
-            console.log(data);
             staticData.results = data.value;
+            console.log(staticData.results);
         } catch (error) {
             // output to console log
             console.log(error.toString());
