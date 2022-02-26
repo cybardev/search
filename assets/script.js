@@ -1,12 +1,9 @@
 // @ts-nocheck
 const staticData = {
     results: [],
-    callAPI(event) {
-        await proxyAPI(event);
-    },
 };
 
-async function proxyAPI(event) {
+async function callAPI(event) {
     try {
         const response = await fetch(
             `/.netlify/functions/search?query=${encodeURIComponent(
