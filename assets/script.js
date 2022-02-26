@@ -3,9 +3,7 @@ const staticData = {
     results: [],
 };
 
-// document.querySelector(".search-box").addEventListener("submit", (event) => {
-//     callAPI(event);
-// });
+// document.querySelector(".search-box").addEventListener("submit", callAPI);
 
 async function callAPI(event) {
     // event.preventDefault();
