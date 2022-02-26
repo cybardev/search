@@ -3,12 +3,12 @@ const staticData = {
     results: [],
 };
 
-document.querySelector(".search-box").addEventListener("submit", (event) => {
-    callAPI(event);
-});
+// document.querySelector(".search-box").addEventListener("submit", (event) => {
+//     callAPI(event);
+// });
 
 async function callAPI(event) {
-    event.preventDefault();
+    // event.preventDefault();
     try {
         const response = await fetch(
             `/.netlify/functions/search?query=${encodeURIComponent(

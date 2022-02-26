@@ -37,7 +37,11 @@
             <h1>Cy <span>|</span> search</h1>
         </header>
         <main x-data="staticData">
-            <form class="input-group search-box" autocomplete="off">
+            <form
+                @submit.prevent="await callAPI($event)"
+                class="input-group search-box"
+                autocomplete="off"
+            >
                 <input
                     type="text"
                     name="searchInput"
