@@ -13,6 +13,7 @@ document.querySelector(".search-box")?.addEventListener("submit", (e) => {
     )
         .then((res) => {
             let data = res.json();
+            console.log(data);
             staticData.results = data.value;
         })
         .catch((err) => {
