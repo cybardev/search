@@ -7,7 +7,7 @@ async function callAPI(event) {
     try {
         const response = await fetch(
             `/.netlify/functions/search?query=${encodeURIComponent(
-                event.currentTarget.searchInput.value
+                event.currentTarget.query.value
             )}`
         );
         if (!response.ok) {
