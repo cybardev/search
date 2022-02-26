@@ -11,9 +11,9 @@ document.querySelector(".search-box")?.addEventListener("submit", (e) => {
             e.currentTarget.searchInput.value
         )}`
     )
-        .then((data) => data.json())
-        .then(({ value }) => {
-            staticData.results = value;
+        .then((res) => {
+            let data = res.json();
+            staticData.results = data.value;
         })
         .catch((err) => {
             console.log(err.toString());
