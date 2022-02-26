@@ -38,7 +38,7 @@
         </header>
         <main x-data="staticData">
             <form
-                @submit.prevent="console.log('Form submitted')"
+                @submit.prevent="callAPI"
                 class="input-group search-box"
                 autocomplete="off"
             >
