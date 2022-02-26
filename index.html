@@ -40,7 +40,7 @@
             <form
                 class="input-group search-box"
                 autocomplete="off"
-                @submit="await callAPI($event)"
+                @submit.prevent="await callAPI"
             >
                 <input
                     type="text"

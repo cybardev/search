@@ -4,7 +4,6 @@ const staticData = {
 };
 
 async function callAPI(event) {
-    event.preventDefault();
     try {
         const response = await fetch(
             `/.netlify/functions/search?query=${encodeURIComponent(
