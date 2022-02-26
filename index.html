@@ -65,16 +65,28 @@
                 </button>
             </form>
             <section>
-                <template x-for="entry in results">
-                    <a :href="entry.url" target="_blank" class="search-result">
-                        <h2 x-text="entry.title" class="result-title"></h2>
-                        <p x-text="entry.url" class="result-url"></p>
-                    </a>
-                    <p
-                        x-text="entry.description"
-                        class="result-description"
-                    ></p>
-                </template>
+                <table>
+                    <template x-for="entry in results">
+                        <tr>
+                            <td>
+                                <a :href="entry.url" class="search-result">
+                                    <h2
+                                        x-text="entry.title"
+                                        class="result-title"
+                                    ></h2>
+                                    <p
+                                        x-text="entry.url"
+                                        class="result-url"
+                                    ></p>
+                                </a>
+                                <p
+                                    x-text="entry.description"
+                                    class="result-description"
+                                ></p>
+                            </td>
+                        </tr>
+                    </template>
+                </table>
             </section>
         </main>
         <footer>
