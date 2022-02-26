@@ -1,11 +1,7 @@
 // @ts-nocheck
 const staticData = {
     results: [],
-};
-
-document
-    .querySelector(".search-box")
-    ?.addEventListener("submit", async (event) => {
+    callAPI: async (event) => {
         event.preventDefault();
         try {
             const response = await fetch(
@@ -18,10 +14,11 @@ document
                 console.log(response.toString());
             }
             const data = await response.json();
-            staticData.results = data.value;
-            console.log(staticData.results);
+            this.results = data.value;
+            console.log(this.results);
         } catch (error) {
             // output to console log
             console.log(error.toString());
         }
-    });
+    },
+};
