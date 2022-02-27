@@ -2,6 +2,11 @@
  * Script to call API endpoint and store search results
  */
 
+// data to be passed to Alpine components
+const staticData = {
+    results: [],
+};
+
 /**
  * Store or retrieve data from sessionStorage
  *
@@ -81,7 +86,5 @@ if (["/", "/index.html"].includes(location.pathname)) {
 
 // store search results to variable when results page loads
 if (["/results.html"].includes(location.pathname)) {
-    const staticData = {
-        results: store("get", "results"),
-    };
+    staticData.results = store("get", "results");
 }
