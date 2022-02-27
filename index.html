@@ -25,23 +25,31 @@
             src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
         ></script>
     </head>
-    <body>
+    <body x-data>
         <header>
             <a
                 href="https://github.com/cybardev/search"
                 alt="GitHub repository"
                 target="_blank"
                 tabindex="-1"
+                class="logo"
                 ><img
                     src="./assets/images/cy-icon.png"
                     alt="Cybardev Logo"
-                    class="logo"
                 />Cybardev Logo
             </a>
             <h1>Cy <span>|</span> search</h1>
+            <p>
+                Made by
+                <a
+                    href="https://github.com/cybardev"
+                    alt="Sheikh's GitHub profile"
+                    target="_blank"
+                    >Sheikh</a
+                >
+            </p>
         </header>
-        <main x-data="staticData">
-            <section id="qotd"></section>
+        <main>
             <form
                 @submit.prevent="callSearchAPI"
                 class="input-group search-box"
@@ -62,31 +70,8 @@
                     <img src="./assets/images/search.svg" alt="search icon" />
                 </button>
             </form>
-            <section>
-                <template x-for="entry in results">
-                    <a :href="entry.url" class="search-result">
-                        <h2 x-text="entry.title" class="result-title"></h2>
-                        <p x-text="entry.url" class="result-url"></p>
-                    </a>
-                    <p
-                        x-text="entry.description"
-                        class="result-description"
-                    ></p>
-                    <hr />
-                </template>
-            </section>
         </main>
-        <footer>
-            <p>
-                Made by
-                <a
-                    href="https://github.com/cybardev"
-                    alt="Sheikh's GitHub profile"
-                    target="_blank"
-                    >Sheikh</a
-                >
-            </p>
-        </footer>
+        <footer id="qotd"></footer>
         <script async src="./sw.js"></script>
     </body>
 </html>

@@ -8,7 +8,7 @@ const handler = async (event, context) => {
                 "https://" + API_HOST + "/api/Search/WebSearchAPI?q=",
             SEARCH_PARAMS =
                 "&pageNumber=1&pageSize=50&autoCorrect=false&safeSearch=false",
-            QUERY_STRING = event.queryStringParameters.query;
+            QUERY_STRING = event.queryStringParameters.q;
 
         const response = await fetch(
             API_ENDPOINT + QUERY_STRING + SEARCH_PARAMS,

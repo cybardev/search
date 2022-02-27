@@ -16,17 +16,32 @@ header {
 header {
     margin-top: 30%;
     align-items: center;
+    align-self: center;
 }
 
 header a {
     margin: 0;
     padding: 0;
-    font-size: 0px;
 }
 
 header a img {
     width: 96px;
     height: 96px;
+    border-radius: 50%;
+}
+
+header p {
+    color: #646464;
+}
+
+header p a {
+    color: rgb(56, 56, 56);
+}
+
+header p a:hover,
+header p a:active,
+header p a:visited {
+    color: black;
 }
 
 h1 span {
@@ -41,22 +56,10 @@ footer {
     align-self: center;
 }
 
-footer p {
-    color: #646464;
-}
-
-footer p a {
-    color: rgb(56, 56, 56);
-}
-
-footer p a:hover,
-footer p a:active,
-footer p a:visited {
-    color: black;
-}
-
 .logo {
     margin: 1rem;
+    font-size: 0px;
+    border-radius: 50%;
 }
 
 .search-box,
@@ -81,7 +84,7 @@ footer p a:visited {
 
 @media screen and (min-width: 768px) {
     header {
-        margin-top: 20%;
+        margin-top: 10%;
     }
 
     .search-box,
@@ -92,7 +95,7 @@ footer p a:visited {
 
 @media screen and (min-width: 1080px) {
     header {
-        margin-top: 10%;
+        margin-top: 5%;
     }
 
     .search-box,
