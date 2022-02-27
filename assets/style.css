@@ -1,5 +1,10 @@
+:root {
+    --font: Ubuntu, sans-serif;
+    --content-width: 100%;
+}
+
 body {
-    font-family: sans-serif;
+    font-family: var(--font);
 }
 
 body,
@@ -54,7 +59,8 @@ footer p a:visited {
     margin: 1rem;
 }
 
-.search-box {
+.search-box,
+#qotd {
     width: 100%;
     margin: auto;
 }
@@ -68,12 +74,18 @@ footer p a:visited {
     justify-content: center;
 }
 
+#qotd {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
 @media screen and (min-width: 768px) {
     header {
         margin-top: 20%;
     }
 
-    .search-box {
+    .search-box,
+    #qotd {
         width: 80%;
     }
 }
@@ -83,7 +95,8 @@ footer p a:visited {
         margin-top: 10%;
     }
 
-    .search-box {
+    .search-box,
+    #qotd {
         width: 40%;
     }
 }

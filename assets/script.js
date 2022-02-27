@@ -3,23 +3,36 @@
  */
 const staticData = {
     results: [],
-    callAPI: async (event) => {
+    callSearchAPI: async (event) => {
         try {
             const response = await fetch(
-                `/.netlify/functions/search?query=${encodeURIComponent(
-                    event.currentTarget.query.value
-                )}`
+                "/.netlify/functions/search?query=" +
+                    encodeURIComponent(event.currentTarget.query.value)
             );
             if (!response.ok) {
-                // NOT res.status >= 200 && res.status < 300
                 console.log(response.toString());
             }
             const data = await response.json();
             staticData.results = data.value;
             console.log(staticData.results);
         } catch (error) {
-            // output to console log
             console.log(error.toString());
         }
     },
 };
+
+async function callQuoteAPI() {
+    try {
+        const response = await fetch("/.netlify/functions/quote");
+        if (!response.ok) {
+            console.log(response.toString());
+        }
+        const data = await response.json();
+        document.getElementById(
+            "qotd"
+        ).innerHTML = `<blockquote cite="${data.url}">${data.content}</blockquote><address>- ${data.originator.name}</address>`;
+    } catch (error) {
+        console.log(error.toString());
+    }
+}
+callQuoteAPI();
