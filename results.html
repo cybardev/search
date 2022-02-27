@@ -25,7 +25,7 @@
             src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
         ></script>
     </head>
-    <body>
+    <body x-data="staticData">
         <header>
             <a
                 href="https://github.com/cybardev/search"
@@ -50,7 +50,7 @@
             </p>
             <hr />
         </header>
-        <main x-data="staticData">
+        <main>
             <template x-for="entry in results">
                 <a :href="entry.url" class="search-result">
                     <h2 x-text="entry.title" class="result-title"></h2>
