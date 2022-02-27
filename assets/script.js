@@ -4,7 +4,9 @@
 
 // data to be passed to Alpine components
 const staticData = {
-    results: [],
+    // store search results array when results page loads
+    results:
+        location.pathname === "/results.html" ? store("get", "results") : [],
 };
 
 /**
@@ -82,9 +84,4 @@ async function callQuotesAPI(frameID) {
 // display quote when homepage loads
 if (["/", "/index.html"].includes(location.pathname)) {
     callQuotesAPI("qotd");
-}
-
-// store search results to variable when results page loads
-if (["/results.html"].includes(location.pathname)) {
-    staticData.results = store("get", "results");
 }
