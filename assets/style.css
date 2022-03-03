@@ -36,18 +36,14 @@ header p {
     color: #666;
 }
 
-header p a,
-.search-result {
+header p a {
     text-decoration: none;
     color: #333;
 }
 
 header p a:hover,
 header p a:active,
-header p a:visited,
-.search-result:hover,
-.search-result:active,
-.search-result:visited {
+header p a:visited {
     text-decoration: none;
     color: black;
 }
@@ -94,8 +90,24 @@ footer address {
     justify-content: center;
 }
 
+.search-result:hover,
+.search-result:active,
+.search-result:visited,
+.search-result {
+    text-decoration: none;
+    color: #666;
+}
+
 .result-entry {
     margin: 48px auto;
+}
+
+.result-title {
+    color: #444;
+}
+
+.result-url {
+    text-decoration: underline;
 }
 
 @media screen and (min-width: 768px) {
