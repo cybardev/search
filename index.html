@@ -56,7 +56,7 @@
                     fetch(
                         '/.netlify/functions/search?q=' +
                         encodeURIComponent(
-                            document.getElementById('search-field')
+                            document.getElementById('search-field').value
                         )
                     )
                     .then(res => res.json())
