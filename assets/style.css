@@ -44,6 +44,10 @@ header p a:visited {
     color: black;
 }
 
+header p img {
+    width: 16px;
+}
+
 h1 span {
     color: crimson;
 }
@@ -54,6 +58,10 @@ main {
 
 footer {
     align-self: center;
+}
+
+footer address {
+    text-align: center;
 }
 
 .logo {

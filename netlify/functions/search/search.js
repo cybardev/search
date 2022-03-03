@@ -2,12 +2,15 @@ const fetch = require("node-fetch");
 
 const handler = async (event, context) => {
     try {
-        const API_KEY = process.env.SEARCH_API,
+        const SEARCH_RESULTS = 10,
+            API_KEY = process.env.SEARCH_API,
             API_HOST = "contextualwebsearch-websearch-v1.p.rapidapi.com",
             API_ENDPOINT =
                 "https://" + API_HOST + "/api/Search/WebSearchAPI?q=",
             SEARCH_PARAMS =
-                "&pageNumber=1&pageSize=50&autoCorrect=false&safeSearch=false",
+                "&pageNumber=1&pageSize=" +
+                SEARCH_RESULTS +
+                "&autoCorrect=false&safeSearch=false",
             QUERY_STRING = event.queryStringParameters.q;
 
         const response = await fetch(

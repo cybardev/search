@@ -19,13 +19,13 @@
         />
         <link rel="stylesheet" href="./assets/bootstrap.css" />
         <link rel="stylesheet" href="./assets/style.css" />
-        <script async src="./assets/script.js"></script>
+        <!-- <script async src="./assets/script.js"></script> -->
         <script
             defer
             src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
         ></script>
     </head>
-    <body x-data>
+    <body>
         <header>
             <a
                 href="https://github.com/cybardev/search"
@@ -40,7 +40,8 @@
             </a>
             <h1>Cy <span>|</span> search</h1>
             <p>
-                Made by
+                Made with&nbsp;
+                <img src="./assets/images/heart.png" alt="love" />&nbsp;&nbsp;by
                 <a
                     href="https://github.com/cybardev"
                     alt="Sheikh's GitHub profile"
@@ -49,15 +50,29 @@
                 >
             </p>
         </header>
-        <main>
+        <main x-data="{ results: [] }">
             <form
-                @submit.prevent="callSearchAPI"
+                @submit.prevent="
+                    fetch(
+                        '/.netlify/functions/search?q=' +
+                        encodeURIComponent(
+                            document.getElementById('search-field')
+                        )
+                    )
+                    .then(res => res.json())
+                    .then(data => {
+                        results = data.value;
+                        console.log(results);
+                    })
+                    .catch(err => console.log(err))
+                "
                 class="input-group search-box"
                 autocomplete="off"
             >
                 <input
                     type="text"
                     name="query"
+                    id="search-field"
                     class="form-control search-field"
                     aria-label="Search box"
                     aria-describedby="search-button"
@@ -70,8 +85,41 @@
                     <img src="./assets/images/search.svg" alt="search icon" />
                 </button>
             </form>
+            <section>
+                <template x-for="result in results">
+                    <article>
+                        <a :href="result.url" class="search-result">
+                            <h2 x-text="result.title" class="result-title"></h2>
+                            <p x-text="result.url" class="result-url"></p>
+                        </a>
+                        <p
+                            x-text="result.description"
+                            class="result-description"
+                        ></p>
+                    </article>
+                </template>
+            </section>
         </main>
-        <footer id="qotd"></footer>
+        <footer
+            x-data="{
+                quote_msg: '',
+                quote_url: '',
+                quote_author: '',
+            }"
+            x-init="
+            fetch('/.netlify/functions/quote')
+                .then(res => res.json())
+                .then(data => {
+                    quote_url = data.url;
+                    quote_msg = data.content;
+                    quote_author = data.originator.name;
+                })
+                .catch(err => console.log(err))
+        "
+        >
+            <blockquote :cite="quote_url" x-text="quote_msg"></blockquote>
+            <address x-text="`&ndash;&nbsp;&nbsp;${quote_author}`"></address>
+        </footer>
         <script async src="./sw.js"></script>
     </body>
 </html>
