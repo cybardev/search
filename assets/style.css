@@ -1,6 +1,8 @@
 :root {
     --font: Ubuntu, sans-serif;
-    --content-width: 100%;
+    --mobile-width: 100%;
+    --tablet-width: 80%;
+    --desktop-width: 40%;
 }
 
 body {
@@ -31,16 +33,22 @@ header a img {
 }
 
 header p {
-    color: #646464;
+    color: #666;
 }
 
-header p a {
-    color: rgb(56, 56, 56);
+header p a,
+.search-result {
+    text-decoration: none;
+    color: #333;
 }
 
 header p a:hover,
 header p a:active,
-header p a:visited {
+header p a:visited,
+.search-result:hover,
+.search-result:active,
+.search-result:visited {
+    text-decoration: none;
     color: black;
 }
 
@@ -58,6 +66,8 @@ main {
 
 footer {
     align-self: center;
+    text-align: center;
+    padding-bottom: 40px;
 }
 
 footer address {
@@ -70,9 +80,8 @@ footer address {
     border-radius: 50%;
 }
 
-.search-box,
-#qotd {
-    width: 100%;
+.reading-width {
+    width: var(--mobile-width);
     margin: auto;
 }
 
@@ -85,9 +94,8 @@ footer address {
     justify-content: center;
 }
 
-#qotd {
-    text-align: center;
-    margin-bottom: 40px;
+.result-entry {
+    margin: 48px auto;
 }
 
 @media screen and (min-width: 768px) {
@@ -95,9 +103,8 @@ footer address {
         margin-top: 10%;
     }
 
-    .search-box,
-    #qotd {
-        width: 80%;
+    .reading-width {
+        width: var(--tablet-width);
     }
 }
 
@@ -106,8 +113,7 @@ footer address {
         margin-top: 5%;
     }
 
-    .search-box,
-    #qotd {
-        width: 40%;
+    .reading-width {
+        width: var(--desktop-width);
     }
 }

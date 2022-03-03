@@ -19,7 +19,6 @@
         />
         <link rel="stylesheet" href="./assets/bootstrap.css" />
         <link rel="stylesheet" href="./assets/style.css" />
-        <!-- <script async src="./assets/script.js"></script> -->
         <script
             defer
             src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
@@ -50,7 +49,7 @@
                 >
             </p>
         </header>
-        <main x-data="{ results: [] }">
+        <main x-data="{ results: [], showResults: false }">
             <form
                 @submit.prevent="
                     fetch(
@@ -62,10 +61,11 @@
                     .then(res => res.json())
                     .then(data => {
                         results = data.value;
+                        showResults = true;
                     })
                     .catch(err => console.log(err))
                 "
-                class="input-group search-box"
+                class="input-group search-box reading-width"
                 autocomplete="off"
             >
                 <input
@@ -84,9 +84,9 @@
                     <img src="./assets/images/search.svg" alt="search icon" />
                 </button>
             </form>
-            <section>
+            <section class="reading-width" x-show="showResults" x-transition>
                 <template x-for="result in results">
-                    <article>
+                    <article class="result-entry">
                         <a :href="result.url" class="search-result">
                             <h2 x-text="result.title" class="result-title"></h2>
                             <p x-text="result.url" class="result-url"></p>
@@ -100,10 +100,12 @@
             </section>
         </main>
         <footer
+            class="reading-width"
             x-data="{
                 quote_msg: '',
                 quote_url: '',
                 quote_author: '',
+                showQuote: false,
             }"
             x-init="
             fetch('/.netlify/functions/quote')
@@ -112,9 +114,12 @@
                     quote_url = data.url;
                     quote_msg = data.content;
                     quote_author = data.originator.name;
+                    showQuote = true;
                 })
                 .catch(err => console.log(err))
         "
+            x-show="showQuote"
+            x-transition
         >
             <blockquote :cite="quote_url" x-text="quote_msg"></blockquote>
             <address x-text="`&ndash;&nbsp;&nbsp;${quote_author}`"></address>
