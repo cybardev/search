@@ -23,6 +23,7 @@
             defer
             src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
         ></script>
+        <script async src="./assets/script.js"></script>
     </head>
     <body>
         <header>
@@ -49,22 +50,9 @@
                 >
             </p>
         </header>
-        <main x-data="{ results: [], showResults: false }">
+        <main x-data="searchData">
             <form
-                @submit.prevent="
-                    fetch(
-                        '/.netlify/functions/search?q=' +
-                        encodeURIComponent(
-                            document.getElementById('search-field').value
-                        )
-                    )
-                    .then(res => res.json())
-                    .then(data => {
-                        results = data.value;
-                        showResults = true;
-                    })
-                    .catch(err => console.log(err))
-                "
+                @submit.prevent="searchFetch"
                 class="input-group search-box reading-width"
                 autocomplete="off"
             >
@@ -101,23 +89,8 @@
         </main>
         <footer
             class="reading-width"
-            x-data="{
-                quote_msg: '',
-                quote_url: '',
-                quote_author: '',
-                showQuote: false,
-            }"
-            x-init="
-            fetch('/.netlify/functions/quote')
-                .then(res => res.json())
-                .then(data => {
-                    quote_url = data.url;
-                    quote_msg = data.content;
-                    quote_author = data.originator.name;
-                    showQuote = true;
-                })
-                .catch(err => console.log(err))
-        "
+            x-data="quoteData"
+            x-init="quoteFetch"
             x-show="showQuote"
             x-transition
         >
