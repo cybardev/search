@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 
 const handler = async () => {
     try {
-        const API_KEY = process.env.SEARCH_API,
+        const API_KEY = process.env.QUOTES_API,
             API_HOST = "quotes15.p.rapidapi.com",
             API_ENDPOINT = "https://" + API_HOST + "/quotes/random/";
 
