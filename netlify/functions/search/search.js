@@ -2,15 +2,15 @@ const fetch = require("node-fetch");
 
 const handler = async (event, context) => {
     try {
-        const SEARCH_RESULTS = 10,
+        const SEARCH_RESULTS = 20,
             API_KEY = process.env.SEARCH_API,
-            API_HOST = "contextualwebsearch-websearch-v1.p.rapidapi.com",
+            API_HOST = "api.search.brave.com",
             API_ENDPOINT =
-                "https://" + API_HOST + "/api/Search/WebSearchAPI?q=",
+                "https://" + API_HOST + "/res/v1/web/search?q=",
             SEARCH_PARAMS =
-                "&pageNumber=1&pageSize=" +
+                "&offset=0&count=" +
                 SEARCH_RESULTS +
-                "&autoCorrect=false&safeSearch=false",
+                "&spellcheck=0&safesearch=off",
             QUERY_STRING = event.queryStringParameters.q;
 
         const response = await fetch(
@@ -18,8 +18,7 @@ const handler = async (event, context) => {
             {
                 method: "GET",
                 headers: {
-                    "x-rapidapi-host": API_HOST,
-                    "x-rapidapi-key": API_KEY,
+                    "X-Subscription-Token": API_KEY,
                 },
             }
         );
