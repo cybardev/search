@@ -28,13 +28,13 @@ const searchData = {
     searchFetch() {
         fetch(
             "/.netlify/functions/search?q=" +
-                encodeURIComponent(
-                    document.getElementById("search-field").value
-                )
+            encodeURIComponent(
+                document.getElementById("search-field").value
+            )
         )
             .then((res) => res.json())
             .then((data) => {
-                this.results = data.value;
+                this.results = data.web.results;
                 this.showResults = true;
             })
             .catch((err) => console.log(err));
